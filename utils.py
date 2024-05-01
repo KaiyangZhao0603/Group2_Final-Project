@@ -3,31 +3,43 @@ import librosa
 import os
 
 def load_audio_file(file_path):
-    # 加载音频文件，并转换采样率
+    # Load the audio file and convert the sampling rate
     wave, sr = librosa.load(file_path, sr=16000, mono=True)
     return wave
 
 def extract_features(audio, yamnet):
-    # YAMNet 返回三个输出：scores, embeddings, spectrogram
+    # YAMNet returns three outputs: scores, embeddings, spectrogram
     scores, embeddings, spectrogram = yamnet(audio)
-    # 根据需要截断或填充 embeddings 以适应模型输入
-    max_time_steps = 60  # 假设最大时间步长
+    # Truncate or pad the embeddings as needed to fit the model input
+    max_time_steps = 60  # Assume maximum time steps
     if embeddings.shape[0] < max_time_steps:
-        # 填充
+        # Padding
         embeddings = np.pad(embeddings, ((0, max_time_steps - embeddings.shape[0]), (0, 0)), 'constant')
     elif embeddings.shape[0] > max_time_steps:
-        # 截断
+        # Truncating
         embeddings = embeddings[:max_time_steps]
     return embeddings
 
 def process_folder(folder_path,yamnet):
-    # 创建一个字典来存储每个文件的 embeddings
+    # Create a dictionary to store the embeddings of each file
     all_embeddings = {}
-    # 遍历文件夹中的所有文件
+    # Iterate through all files in the folder
     for filename in os.listdir(folder_path):
-        if filename.endswith('.mp3'):  # 确保处理 MP3 文件
+        if filename.endswith('.mp3'):  # Ensure to process MP3 files
             file_path = os.path.join(folder_path, filename)
             audio = load_audio_file(file_path)
             embeddings = extract_features(audio, yamnet)
-            all_embeddings[filename] = embeddings # 将 embeddings 转换为 NumPy 数组，并存储
+            all_embeddings[filename] = embeddings # Convert embeddings to NumPy array and store
+    return all_embeddings
+
+def process_folder_FMA(folder_path, yamnet):
+    all_embeddings = {}
+    # Iterate through all subfolders and files
+    for root, dirs, files in os.walk(folder_path):
+        for filename in files:
+            if filename.endswith('.mp3'):
+                file_path = os.path.join(root, filename)
+                audio = load_audio_file(file_path)
+                embeddings = extract_features(audio, yamnet)
+                all_embeddings[filename] = embeddings
     return all_embeddings
