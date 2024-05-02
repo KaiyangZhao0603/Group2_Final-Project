@@ -11,8 +11,9 @@
 We tried augmentation methods including pitch shifting, add background noise, reverb and many kinds of filters. Finally, we choose pitch shifting and a lowpass filter (ladder filter), but we put the code of all of augmentation methods in the utils.py.
 #### 3. data split
 20% for test (1082)  
-80% for training  25% for validation (1081)  
-                  75% for training (3243)  
+80% for training  
+｜- 25% for validation (1081)  
+｜- 75% for training (3243)  
 
 ## Model
 we use yamnet to extract features and apply a TCN model after that.
