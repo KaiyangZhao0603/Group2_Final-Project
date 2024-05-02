@@ -16,3 +16,5 @@ We tried augmentation methods including pitch shifting, add background noise, re
 
 ## Model
 we use yamnet to extract features and apply a TCN model after that.
+## Reference
+Dharmapriya, J., Dayarathne, L., Diasena, T., Arunathilake, S., Kodikara, N., & Wijesekera, P. (2021, January). Music Emotion Visualization through Colour. In 2021 International Conference on Electronics, Information, and Communication (ICEIC) (pp. 1-6). IEEE.
