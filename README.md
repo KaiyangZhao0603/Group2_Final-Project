@@ -8,9 +8,9 @@
 #### data augmentation (5406 songs in total)
 We tried augmentation methods including pitch shifting, add background noise, reverb and many kinds of filters. Finally, we choose pitch shifting and a lowpass filter (ladder filter), but we put the code of all of augmentation methods in the utils.py.
 #### data split
-20% for test (1082)
-80% for training  25% for validation (1081)
-                  75% for training (3243)
+20% for test (1082)  
+80% for training  25% for validation (1081)  
+                  75% for training (3243)  
 
 ### model
 we use yamnet to extract features and apply a TCN model after that.
