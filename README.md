@@ -12,5 +12,5 @@ We tried augmentation methods including pitch shifting, add background noise, re
 80% for training  25% for validation (1081)  
                   75% for training (3243)  
 
-### model
+### Model
 we use yamnet to extract features and apply a TCN model after that.
