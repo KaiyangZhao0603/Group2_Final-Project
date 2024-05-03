@@ -1,7 +1,7 @@
 # Music Recommendation System Based on Color-Based Emotions
 [KaiyangZhao](https://github.com/KaiyangZhao0603) [Duanning Wang](https://github.com/119010291) [Zhinuo Li](https://github.com/zhinuo5375)
 
-Welcome to our Color Emotion Music Recommender! This system helps you find music that matches how you're feeling just by picking a color. Here’s how you can use it:
+Welcome to our Color Emotion Music Recommender! This system helps you find music that matches how you're feeling just by picking a color.
 
 1. **Pick a Color**: Choose a color that shows how you feel right now.
 2. **We Understand Your Feeling**: Our system uses the color you pick to figure out your mood.
