@@ -1,5 +1,7 @@
 # Music Recommendation System Based on Color-Based Emotions
-[KaiyangZhao](https://github.com/KaiyangZhao0603)
+[KaiyangZhao](https://github.com/KaiyangZhao0603) [Duanning Wang](https://github.com/119010291) [Zhinuo Li](https://github.com/duanning/119010291)
+
+
 
 
 
