@@ -39,7 +39,7 @@ We tried augmentation methods including pitch shifting, add background noise, re
 we use yamnet to extract features and apply a TCN model after that. 
 
 ## Using this model
-### Prepare the environemnt 
+### Prepare the environment 
 Ensure that your Python environment is set up correctly by installing all necessary dependencies listed in the `requirements.txt` file.
 This file contains our pre-trained model.[Download the model file here](https://example.com/path/to/emotionPredict2.h5)
 
