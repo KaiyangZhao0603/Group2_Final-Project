@@ -1,4 +1,5 @@
-# Group2_Final-Project
+# Music Recommendation System Based on Color-Based Emotions
+
 
 ## General flowchart
 ![alt text](flowchart.16.png?raw=true)
