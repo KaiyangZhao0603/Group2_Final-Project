@@ -52,7 +52,7 @@ If you wish to train your own model, follow these steps:
 ### Updating the Song Library
 If you with to update song library, follow two steps:
 1. Pleace replace your file with, `folder_path = 'fma_small/'`in the training.ipynb, _prediction_ section
-2. Generate New CSV File: After updating the song library and running the prediction script, a new CSV file will be generated with the predicted emotional labels. Replace the existing _FMA_Metadata/tracks.csv_ with this new CSV to update your system's song recommendations.
+2. Generate New CSV File: After updating the song library and running the prediction script, a new CSV file will be generated with the predicted emotional labels. Replace the existing `FMA_Metadata/tracks.csv` with this new CSV to update your system's song recommendations.
 
 ## Insights
 ### 1. Evaluation:
