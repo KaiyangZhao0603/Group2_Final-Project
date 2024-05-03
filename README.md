@@ -69,7 +69,7 @@ If you want to update the song library, follow two steps:
 
 2. Generate New CSV File: After updating the song library and running the prediction script, a new CSV file will be generated with the predicted emotional labels. Replace the existing `FMA_Metadata/tracks.csv` with this new CSV to update your system's song recommendations.
 ### Get recommendations based on your color selection
-## Demo (recommendation part in `Main`)
+#### Demo (recommendation part in `Main`)
 If you want to get a recommended song list, follow these steps:
 
 1. Download the [fma_small dataset](https://os.unil.cloud.switch.ch/fma/fma_small.zip) and [fma_metadata](https://os.unil.cloud.switch.ch/fma/fma_metadata.zip)(you will only need the `tracks.csv`).
