@@ -36,7 +36,7 @@ We tried augmentation methods including pitch shifting, add background noise, re
 ｜- 75% for training (3243)  
 
 ## Model
-we use yamnet to extract features and apply a TCN model after that.
+we use yamnet to extract features and apply a TCN model after that. Here is the result we got emotionPredict2.h5
 
 ## Using this model
 ## Insights
