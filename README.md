@@ -41,9 +41,23 @@ we use yamnet to extract features and apply a TCN model after that. [Download th
 ## Using this model
 ### Prepare the environemnt 
 Ensure that your Python environment is set up correctly by installing all necessary dependencies listed in the `requirements.txt` file.
+This file contains our pre-trained model.[Download the model file here](https://example.com/path/to/emotionPredict2.h5)
+
+### Training Your Own Model
+If you wish to train your own model, follow these steps:
+
+1. Prepare Your Audio Data: Place your audio files in the directory `DEAM_Dataset/MEMD_audio/`. Make sure that your audio files are properly formatted and named.
+   
+2. Set Emotional Labels: Update the emotional labels (valence and arousal) by modifying the CSV file at `DEAM_Dataset/annotations/static_annotations_averaged_songs_1_2000.csv` with your labels.
+### Updating the Song Library
+If you with to update song library, follow two steps:
+1. Pleace replace your file with, folder_path = 'fma_small/' in the training.ipynb, prediction section
+2. Generate New CSV File: After updating the song library and running the prediction script, a new CSV file will be generated with the predicted emotional labels. Replace the existing FMA_Metadata/tracks.csv with this new CSV to update your system's song recommendations.
+
 ## Insights
+1. Evaluation:
+2. Representaion of color emotion
+   In our project, emotion label for both music and color are arousal and valence. This concept is from the article "Music Emotion Visualization through Colour", that combian the colour circle with 8 dimentional valence and arousal pattern. We improt this idea in out UI part, using the relative position of 
+   
 ## Reference
-Emotion label for both music ad color are arousal and valence. This idea is from the article "Music Emotion Visualization through Colour", that combian the colour circle with 8 dimentional valence and arousal pattern.
-
-
 Dharmapriya, J., Dayarathne, L., Diasena, T., Arunathilake, S., Kodikara, N., & Wijesekera, P. (2021, January). Music Emotion Visualization through Colour. In 2021 International Conference on Electronics, Information, and Communication (ICEIC) (pp. 1-6). IEEE.
