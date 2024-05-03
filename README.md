@@ -48,7 +48,7 @@ If you wish to train your own model, follow these steps:
 
 1. Prepare Your Audio Data: Place your audio files in the directory _`DEAM_Dataset/MEMD_audio/_`. Make sure that your audio files are properly formatted and named.
    
-2. Set Emotional Labels: Update the emotional labels (valence and arousal) by modifying the CSV file at `DEAM_Dataset/annotations/static_annotations_averaged_songs_1_2000.csv` with your labels.
+2. Set Emotional Labels: Update the emotional labels (valence and arousal) by replacing the CSV file at `DEAM_Dataset/annotations/static_annotations_averaged_songs_1_2000.csv` with your arousal and valencce labels in cvs format.
 ### Updating the Song Library
 If you with to update song library, follow two steps:
 1. Pleace replace your file with, `folder_path = 'fma_small/'`in the training.ipynb, _prediction_ section
