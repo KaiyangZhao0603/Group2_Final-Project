@@ -26,30 +26,41 @@ https://github.com/mdeff/fma
 * Comprehensive metadate
 
 ## Data preprocess
-#### 1. load and match data
-* note here that when load mp3. music, if start_time=0, it will get error: Input signal length=0 is too small to resample from. You can cut the audio to fix it (what we did) or other methods according to https://blog.csdn.net/sxf1061700625/article/details/128950827.
-* not all audio have valence and arousal, so we need to align them according to the song_ids first.
-#### 2. data augmentation (5406 songs in total)
-We tried augmentation methods including pitch shifting, add background noise, reverb and many kinds of filters. Finally, we choose pitch shifting and a lowpass filter (ladder filter), but we put the code of all of augmentation methods in the utils.py.
-#### 3. data split
+#### 1. Load and match data
+* note here that when loading mp3. music, if start_time=0, it will get an error: Input signal length=0 is too small to resample from. You can cut the audio to fix it (what we did) or other methods according to https://blog.csdn.net/sxf1061700625/article/details/128950827.
+* not all audio clips have valence and arousal, so we need to align them according to the song_ids first.
+#### 2. Data augmentation (5406 songs in total)
+We tried augmentation methods including pitch shifting, adding background noise, reverb, and many kinds of filters. Finally, we chose pitch shifting and a lowpass filter (ladder filter), but we put the code of all of augmentation methods in the utils.py.
+#### 3. Data split
 20% for test (1082)  
 80% for training  
 ｜- 25% for validation (1081)  
 ｜- 75% for training (3243)  
 
 ## Model
-we use yamnet to extract features and apply a TCN model after that. 
+We use YAMNet to extract features and trained a TCN model to predict emotion labels (vanlence and arousal). 
+
+### Model Architecture
+This model is built using TensorFlow's Keras API and features a Temporal Convolutional Network (TCN) followed by a Dense layer. Below are the key components of the model:
+
+* TCN Layer: Configured with an input shape specified by input_shape, this layer uses 64 filters and a kernel size of 6. The network includes one stack with dilations set at [1, 2, 4, 8, 16], using causal padding. Skip connections are employed to facilitate gradient flow. A dropout rate of 0.2 helps prevent overfitting, and the activation function is ReLU, with He Normal kernel initialization.
+* Dense Layer: This follows the TCN layer and consists of 2 units with a linear activation function. It includes a regularization term (L2 with a factor of 0.01) to reduce overfitting.
+* Batch Normalization: Applied after the Dense layer to normalize the activations of the previous layer, which helps in accelerating the training process.
+* Optimizer: The model uses the Adam optimizer with a learning rate of 0.005.
+Compilation: The model is compiled with the mean squared error loss function and tracks the mean absolute error (MAE) as a metric.
 
 ## How to Use Our Code
 ### Prepare the environment 
 Ensure that your Python environment is set up correctly by installing all necessary dependencies listed in the `requirements.txt` file.
-This file contains our pre-trained model.[Download the model file here](https://example.com/path/to/emotionPredict2.h5)
+
 ### Training Your Own Model
 If you wish to train your own model, follow these steps:
 
 1. Prepare Your Audio Data: Place your audio files in the directory `DEAM_Dataset/MEMD_audio/`. Make sure that your audio files are properly formatted and named.
    
-2. Set Emotional Labels: Update the emotional labels (valence and arousal) by replacing the CSV file at `DEAM_Dataset/annotations/static_annotations_averaged_songs_1_2000.csv` with your arousal and valencce labels in cvs format.  
+2. Set Emotional Labels: Update the emotional labels (valence and arousal) by replacing the CSV file at `DEAM_Dataset/annotations/static_annotations_averaged_songs_1_2000.csv` with your arousal and valencce labels in cvs format.
+
+You are welcome to use our trained model. (emotionPredict2.h5")
 ### Updating the Song Library
 If you want to update song library, follow two steps:
 1. Pleace replace your file with, `folder_path = 'fma_small/'`in the Main.ipynb, _prediction_ section
@@ -57,7 +68,7 @@ If you want to update song library, follow two steps:
 ### Get recommendations based on your color selection
 If you want to get a recommended song list, follow these steps:
 
-1.Download the [fma_small dataset](https://os.unil.cloud.switch.ch/fma/fma_small.zip) and [fma_metadata](https://os.unil.cloud.switch.ch/fma/fma_metadata.zip)(you will only need the 'tracks.csv').
+1. Download the [fma_small dataset](https://os.unil.cloud.switch.ch/fma/fma_small.zip) and [fma_metadata](https://os.unil.cloud.switch.ch/fma/fma_metadata.zip)(you will only need the 'tracks.csv').
 
 2. Jump to the "Recommendation" part in the Main.jpynb and replace the file path with your own in the code.
 
