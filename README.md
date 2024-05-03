@@ -4,11 +4,13 @@
 ![alt text](flowchart.16.png?raw=true)
 ## Datasets
 training dataset: DEAM  
+https://cvml.unige.ch/databases/DEAM/  
 * Comprehensive genres
 * Annotated with emotion labels(Arousal & Valence )
 * Provides audio files with the same length (30 seconds)
 
 recommendation dataset: fma  
+https://github.com/mdeff/fma
 * Large dataset scale
 * Comprehensive metadate
 
