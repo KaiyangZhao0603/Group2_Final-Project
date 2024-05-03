@@ -3,6 +3,15 @@
 ## General flowchart
 ![alt text](flowchart.16.png?raw=true)
 ## Datasets
+training dataset: DEAM  
+* Comprehensive genres
+* Annotated with emotion labels(Arousal & Valence )
+* Provides audio files with the same length (30 seconds)
+
+recommendation dataset: fma  
+* Large dataset scale
+* Comprehensive metadate
+
 ## Data preprocess
 #### 1. load and match data
 * note here that when load mp3. music, if start_time=0, it will get error: Input signal length=0 is too small to resample from. You can cut the audio to fix it (what we did) or other methods according to https://blog.csdn.net/sxf1061700625/article/details/128950827.
