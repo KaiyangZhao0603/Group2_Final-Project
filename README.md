@@ -50,8 +50,8 @@ If you wish to train your own model, follow these steps:
    
 2. Set Emotional Labels: Update the emotional labels (valence and arousal) by modifying the CSV file at `DEAM_Dataset/annotations/static_annotations_averaged_songs_1_2000.csv` with your labels.
 ### Updating the Song Library
-If you with to update song library, follow two steps:_
-1. Pleace replace your file with, _folder_path = 'fma_small/'_ in the training.ipynb, _prediction_ section
+If you with to update song library, follow two steps:
+1. Pleace replace your file with, `folder_path = 'fma_small/'`in the training.ipynb, _prediction_ section
 2. Generate New CSV File: After updating the song library and running the prediction script, a new CSV file will be generated with the predicted emotional labels. Replace the existing _FMA_Metadata/tracks.csv_ with this new CSV to update your system's song recommendations.
 
 ## Insights
