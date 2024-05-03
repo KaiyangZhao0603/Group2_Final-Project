@@ -39,5 +39,9 @@ We tried augmentation methods including pitch shifting, add background noise, re
 we use yamnet to extract features and apply a TCN model after that.
 
 ## Using this model
+## Insights
 ## Reference
+Emotion label for both music ad color are arousal and valence. This idea is from the article "Music Emotion Visualization through Colour", that combian the colour circle with 8 dimentional valence and arousal pattern.
+
+
 Dharmapriya, J., Dayarathne, L., Diasena, T., Arunathilake, S., Kodikara, N., & Wijesekera, P. (2021, January). Music Emotion Visualization through Colour. In 2021 International Conference on Electronics, Information, and Communication (ICEIC) (pp. 1-6). IEEE.
