@@ -7,8 +7,10 @@ Welcome to our Color Emotion Music Recommender! This system helps you find music
 2. **We Understand Your Feeling**: Our system uses the color you pick to figure out your mood.
 3. **Get Music That Fits Your Mood**: After understanding your mood, we give you a playlist of songs from any music library that goes well with how you feel.
 
-
-
+## Our Outcomes
+1. We trained a predictive TCN model that takes YAMNet embeddings as input, with the DEAM dataset. It can predict song clips' emotion labels (valence and arousal).
+2. We predicted the emotion labels of 7997 song clips from the fma_small dataset using our model.
+3. We built a recommendation system that allows users to select a color and recommend a song list that contains 10 song clips from the fma_small dataset.
 ## General flowchart
 ![alt text](flowchart.16.png?raw=true)
 ## Datasets
