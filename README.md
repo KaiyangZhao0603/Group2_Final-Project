@@ -62,7 +62,7 @@ If you wish to train your own model, follow these steps:
    
 3. Run the code cells in the `Main.ipynb`, 'Training' section.
 
-You are welcome to use our trained model. (emotionPredict2.h5")
+You are welcome to use our trained model. (`emotionPredict2.h5`)
 ### Predict Emotion Labels Using the Model and Updating the Song Library (Optional)
 If you want to update the song library, follow two steps:
 1. Pleace replace your file with, `folder_path = 'fma_small/'`in the `Main.ipynb`, 'Prediction' section, and run the code cells.
