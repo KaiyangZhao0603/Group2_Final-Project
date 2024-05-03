@@ -53,24 +53,26 @@ Compilation: The model is compiled with the mean squared error loss function and
 ### Prepare the environment 
 Ensure that your Python environment is set up correctly by installing all necessary dependencies listed in the `requirements.txt` file.
 
-### Training Your Own Model
+### Training Your Own Model (Optional)
 If you wish to train your own model, follow these steps:
 
 1. Prepare Your Audio Data: Place your audio files in the directory `DEAM_Dataset/MEMD_audio/`. Make sure that your audio files are properly formatted and named.
    
 2. Set Emotional Labels: Update the emotional labels (valence and arousal) by replacing the CSV file at `DEAM_Dataset/annotations/static_annotations_averaged_songs_1_2000.csv` with your arousal and valence labels in CSV format.
+3. Run the code cells in the _Main.ipynb_, _Training_ section.
 
 You are welcome to use our trained model. (emotionPredict2.h5")
-### Updating the Song Library
+### Predict Emotion Labels Using the Model and Updating the Song Library (Optional)
 If you want to update the song library, follow two steps:
-1. Pleace replace your file with, `folder_path = 'fma_small/'`in the Main.ipynb, _prediction_ section
+1. Pleace replace your file with, `folder_path = 'fma_small/'`in the _Main.ipynb_, _Prediction_ section, and run the code cells.
+
 2. Generate New CSV File: After updating the song library and running the prediction script, a new CSV file will be generated with the predicted emotional labels. Replace the existing `FMA_Metadata/tracks.csv` with this new CSV to update your system's song recommendations.
 ### Get recommendations based on your color selection
 If you want to get a recommended song list, follow these steps:
 
 1. Download the [fma_small dataset](https://os.unil.cloud.switch.ch/fma/fma_small.zip) and [fma_metadata](https://os.unil.cloud.switch.ch/fma/fma_metadata.zip)(you will only need the 'tracks.csv').
 
-2. Jump to the "Recommendation" part in the Main.jpynb and replace the file path with your own in the code.
+2. Jump to the _Recommendation_ section in the _Main.jpynb_ and replace the file path with your own in the code.
 
 3. Run the code cells and click on the pop-up UI color palette to select a color, then you will get a song list and you will be able to listen to the corresponding audio clips from the fma_small dataset.
    
