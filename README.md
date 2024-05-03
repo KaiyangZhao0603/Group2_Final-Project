@@ -39,6 +39,8 @@ We tried augmentation methods including pitch shifting, add background noise, re
 we use yamnet to extract features and apply a TCN model after that. [Download the model file here](https://example.com/path/to/emotionPredict2.h5)
 
 ## Using this model
+### Prepare the environemnt 
+Ensure that your Python environment is set up correctly by installing all necessary dependencies listed in the `requirements.txt` file.
 ## Insights
 ## Reference
 Emotion label for both music ad color are arousal and valence. This idea is from the article "Music Emotion Visualization through Colour", that combian the colour circle with 8 dimentional valence and arousal pattern.
